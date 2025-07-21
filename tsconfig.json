@@ -1,13 +1,33 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "esnext",
-    "jsx": "react-jsx",
-    "strict": true,
+    "module": "ESNext",
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "declaration": true,
+    "outDir": "./dist",
+    "strict": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "paths": {
+      "@/*": ["./src/*", "./dist/*"]
+    }
   },
-  "include": ["src/**/*", "src"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "declarations.d.ts", "jest.d.ts"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".storybook/**/*.d.ts",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
+    "webpack.config.ts",
+    "jest.config.ts",
+    "setupTests.ts",
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }
