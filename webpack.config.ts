@@ -22,7 +22,7 @@ export default (env: EnvVariable) => {
     module: {
       rules: [
         {
-          test: /\.s[ac]ss$/i,
+          test: /\.module\.s[ac]ss$/i,
           use: [
             'style-loader',
             {
@@ -59,6 +59,7 @@ export default (env: EnvVariable) => {
     },
     externals: {
       react: 'react',
+      'react-dom': 'react-dom',
     },
   };
 

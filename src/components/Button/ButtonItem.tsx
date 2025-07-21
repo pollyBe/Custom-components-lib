@@ -1,20 +1,20 @@
-import React from 'react'
-import clsx from 'clsx'
-import styles from './ButtonItem.module.scss'
+import React from 'react';
+import clsx from 'clsx';
+import styles from './ButtonItem.module.scss';
 
-type Variant = 'text' | 'outlined' | 'contained'
-type Size = 'small' | 'medium' | 'large'
+type Variant = 'text' | 'outlined' | 'contained';
+type Size = 'small' | 'medium' | 'large';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  label: string
-  onClick: () => void
-  disabled?: boolean
-  variant?: Variant
-  size?: Size
-  icon?: React.ReactNode
+  label: string;
+  onClick: () => void;
+  disabled?: boolean;
+  variant?: Variant;
+  size?: Size;
+  icon?: React.ReactNode;
 }
 
-const ButtonItem: React.FC<ButtonProps> = ({
+const ButtonItem = ({
   label,
   onClick,
   disabled = false,
@@ -23,25 +23,25 @@ const ButtonItem: React.FC<ButtonProps> = ({
   icon,
   className,
   ...props
-}) => {
-  const {button, disabledColor} = styles;
+}: ButtonProps) => {
+  const { button, disabledColor, buttonIcon } = styles;
   return (
     <button
       onClick={onClick}
       disabled={disabled}
       className={clsx(
         button,
-        `${variant}`,
-        `${size}`,
+        styles[variant],
+        styles[size],
         disabled && disabledColor,
         className
       )}
       {...props}
     >
-      {icon && <span className="button__icon">{icon}</span>}
+      {icon && <span className={buttonIcon}>{icon}</span>}
       {label}
     </button>
-  )
-}
+  );
+};
 
-export default ButtonItem
+export default ButtonItem;

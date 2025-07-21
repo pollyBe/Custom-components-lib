@@ -1,22 +1,29 @@
+@import '../../styles/variables.scss';
+
 .text {
-  color: var(--color-main);
+  color: $color-main;
+  font-weight: 600;
   background-color: transparent;
   border: none;
+  &:hover {
+    background-color: rgba(253, 251, 251, 0.993);
+  }
 }
 .outlined {
-  border: 1px solid var(--outlined-border);
-  color: var(--outlined-color);
-  border-radius: 1rem;
+  border: 2px solid $outlined-border;
+  color: $outlined-color;
   background-color: transparent;
   &:hover {
-    border: 1px solid var(--outlined-hover);
+    border: 2px solid $outlined-hover;
   }
 }
 .contained {
   border: none;
-  border-radius: 1rem;
-  background-color: var(--color-main);
-  color: var(--title_color);
+  background-color: $color-main;
+  color: $title_color;
+  &:hover {
+    background-color: $color-main-dark;
+  }
 }
 
 .small {
@@ -34,12 +41,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 1rem;
+  transition: ease-in-out 0.5s;
 }
-.button__icon {
-  margin-right: 8px;
+.buttonIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
 }
 .disabledColor {
-  background-color: var(--background-main-disabled);
-  color: var(--title_color_disabled);
+  background-color: $background-main-disabled;
+  color: $title_color_disabled;
   cursor: not-allowed;
+  pointer-events: none;
 }
