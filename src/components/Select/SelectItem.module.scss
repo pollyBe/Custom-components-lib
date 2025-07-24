@@ -1,0 +1,21 @@
+@use '../../styles/_variables' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 30%;
+  color: $color-main-dark;
+}
+
+.labelStyle {
+  font-size: 0.875rem;
+  color: $color-main;
+}
+
+.select {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid $outlined-border;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}

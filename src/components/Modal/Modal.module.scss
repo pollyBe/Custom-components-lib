@@ -1,0 +1,36 @@
+@use '../../styles/_variables' as *;
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $backdrop-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background-color: $title_color;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  box-shadow: 0 0.5rem 1.25rem $btn-box-shadow1;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
