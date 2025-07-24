@@ -1,0 +1,39 @@
+@use '../../styles/variables' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: $outlined-color;
+}
+
+.input {
+  padding: 10px 14px;
+  border: 1px solid $outlined-border;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: $color-main;
+  }
+
+  &:disabled {
+    background-color: $background-main-disabled;
+    color: $title_color_disabled;
+    cursor: not-allowed;
+  }
+}
+
+.error .input {
+  border-color: $error-color;
+}
+
+.error .label {
+  color: $error-color;
+}

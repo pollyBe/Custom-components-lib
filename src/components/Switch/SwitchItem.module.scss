@@ -1,0 +1,60 @@
+@use '../../styles/_variables' as *;
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+}
+
+.input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  &:checked + .slider {
+    background-color: $color-main;
+  }
+
+  &:checked + .slider::before {
+    transform: translateX(18px);
+  }
+
+  &:disabled + .slider {
+    background-color: $disabled-color;
+    cursor: not-allowed;
+  }
+
+  &:disabled:checked + .slider {
+    background-color: $main-grey-light;
+  }
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: $grey;
+  border-radius: 34px;
+  transition: background-color 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: $title_color;
+    transition: transform 0.2s;
+    border-radius: 50%;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}
